@@ -1,0 +1,19 @@
+{
+  "name": "loggerdiary-online-desktop",
+  "version": "1.0.0",
+  "description": "Electron front for Logger-Diary-cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logger-diary/desktop.git"
+  },
+  "author": "MLC Bloeiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/logger-diary/desktop/issues"
+  },
+  "homepage": "https://github.com/logger-diary/desktop#readme"
+}
