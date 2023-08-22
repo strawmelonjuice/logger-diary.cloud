@@ -37,14 +37,6 @@ function ElectronApp()
 $url = strtok($_SERVER['REQUEST_URI'], '?');
 //      We will always need a trailing slash, or the script won't recognise requested sources
 $url .= (substr($url, -1) == '/' ? '' : '/');
-if (isset($_GET['getcss']) and ($_GET['getcss'] != null)) {
-    header('Content-type: text/css');
-    $csscontent = file_get_contents(__DIR__ . "/css/" . $_GET['getcss']);
-    $returnedcss = str_ireplace('.min.css', '.css', $csscontent);
-    $returnedcss = str_ireplace("'../", "'/?getcss=", $returnedcss);
-    echo($returnedcss);
-    die;
-}
 if (isset($_GET['api']) and ($_GET['api'] != null)) {
     header('Cache-Control: max-age=0, must-revalidate');
     switch ($_GET['api']) {

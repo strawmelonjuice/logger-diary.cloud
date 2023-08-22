@@ -20,3 +20,4 @@ function handleWindowControls() {
   });
 }
 handleWindowControls();
+var userLang = navigator.language || navigator.userLanguage;
