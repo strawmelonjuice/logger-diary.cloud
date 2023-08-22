@@ -1,19 +1,23 @@
 {
-  "name": "loggerdiary-online-desktop",
+  "name": "logger-diary.client",
   "version": "1.0.0",
-  "description": "Electron front for Logger-Diary-cloud.",
-  "main": "index.js",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logger-diary/desktop.git"
+    "url": "git+https://github.com/strawmelonjuice/logger-diary.client.git"
   },
-  "author": "MLC Bloeiman",
-  "license": "BSD-3-Clause",
+  "author": "Mar @strawmelonjuice",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/logger-diary/desktop/issues"
+    "url": "https://github.com/strawmelonjuice/logger-diary.client/issues"
   },
-  "homepage": "https://github.com/logger-diary/desktop#readme"
+  "homepage": "https://logger-diary.strawmelonjuice.online",
+  "devDependencies": {
+    "electron": "^25.2.0"
+  }
 }

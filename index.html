@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logger-Diary client</title>
+    <link rel="stylesheet" href="./style.css" content-type="text/css" charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+    <iframe src="./hi.html" id="page-container"></iframe>
+    <script>
+             window.document.getElementById("page-container").onload = function() {
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.src = "inject.js";
+                window.document.head.append(s);
+              }
+      </script>
+</body>
+</html>
