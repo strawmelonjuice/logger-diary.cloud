@@ -1,0 +1,63 @@
+<!-- You are here: '/' --><!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/js/early.js"></script>
+    <meta charset="UTF-8">
+
+        <meta media="(prefers-color-scheme: light)" name="theme-color" content="#f7bd768d" />
+    <meta media="(prefers-color-scheme: dark)" name="theme-color" content="#3c1c1c" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/logo/icon.ico" />
+    <link  media="(prefers-color-scheme: light)" rel="stylesheet" href="/?getcss=themes/jellybean.css" content-type="text/css" charset="utf-8" />
+    <link  media="(prefers-color-scheme: dark)" rel="stylesheet" href="/?getcss=themes/rouge.css" content-type="text/css" charset="utf-8" />
+    <title>Logger-Diary Online - Welcome!</title>
+        <link rel="manifest" href="/?api=manifest" />
+        
+    <script>
+      if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/js/sw.js')
+            .then((registration) => {
+                console.log(`service worker registered succesfully ${registration}`)
+            })
+            .catch((err) => {
+                console.log(`Error registring ${err}`)
+            })
+    })
+} else {
+    console.log(`Service worker is not supported in this browser.`)
+}
+</script>
+    <style>
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 360px; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div id="theLoggerNav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="doHideNav()">&times;</a>
+    <a href="/login/"><span class="emojis">🗝️</span>&nbsp;Sign in</a>
+    <a href="/register/"><span class="emojis">👋</span>&nbsp;Sign up</a>
+    <a href="/news/"><span class="emojis">🗞️</span>&nbsp;News</a>
+    <a href="javascript:void(0)" id="mmlt" style="display: block;" onclick="moreLinks()">➕ more...</a>
+    <div style="display: none;" id="menumorelinks">
+    <a href="javascript:void(0)" onclick="lessLinks()">➖ less</a>
+    <a href="/contributions/"><span class="emojis">👷</span>&nbsp;Contributors</a>
+</div>
+    </div>
+        <span id="ViewNavButtonSpan"><button onclick="doViewNav()" type="button" id="ViewNavButton">&#9776;</button></span>
+    <div class="headinglogo"><a href="/home/"><img src="/img/logo/logo_816px.webp" alt="Logger-Diary Online" class="headinglogo"></a><span style="text-align: center;"><div class="bymarbanner">Made with&nbsp;<a class="bymarbanner" href="/contributions/">love</a>.</div></span></div>
+        <div id="main">
+            
+            <div class="AddEntryForm">
+            <h2><span class="emojis">👀</span>&nbsp;Welcome</h2>
+        <p align="center"><big>Welcome to Logger, <i>the simple digital diary software</i>!</big></p>
+</div>
+        <div class="readback settingsmain"><br></br>
+        
+                <p class="alert"></p><h1>Logger-Diary: Cloud Edition</h1>
+<p style="fonst-size: big">In maintenance mode</p>
+<p>LD-online is currently undergoing maintenance and is not available <span id="maintenanceend">until that is done</span>.</p>
+<p>Hope to see you back later!</p>
+</body>
+</html>

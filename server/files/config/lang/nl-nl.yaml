@@ -1,0 +1,221 @@
+# 2e taal binnen deze codebase. Ik ben namelijk Nederlands lol.
+"code": "nl-nl"
+1: Welkom
+2: het eenvoudige digitale dagboekprogramma
+3: Gemaakt met
+4: liefde
+5: Welkom bij
+6: Home
+7: Instellingen
+8:
+  1: "Vroeg op"
+  2: "Goedemorgen"
+  3: "Goedemiddag"
+  4: "Goedenavond"
+9: Nieuws
+10: Content op deze pagina is mogelijk niet vertaald omdat deze wordt geladen vanuit statische documenten.
+11: Bijdragers
+12: Die meegeholpen hebben met het maken van
+13: Wil je iets kwijt?
+14: Je vorige dagboekitems
+15: "Je streak is gereset, de laatste keer dat je inlogde was "
+16: " dagen geleden."
+17: "Dagreeks: "
+53: "Post je reeksvieringsherrinering!"
+18: Wanneer
+19: Wat je schreef
+20: "Gevoel"
+21:
+  - 'Ik at spaghetti'
+  - 'Ik heb een schattig huisje gemaakt in Minecraft vandaag!'
+  - 'Een taart gebakken!!!'
+  - 'Ik zag net een huisje gemaakt van snoep, zal ik een klein hapje nemen?'
+  - 'Ik liep net van de trap... en toen..'
+  - 'Bijna mijn verjaardag, de dagen aan het aftellen...'
+  - 'Mijn telefoon werkt al vijf dagen niet meer, dus ik ben gewoon aan het ontspannen.'
+  - 'Een hele schattige hond'
+  - 'Ik zat net 4 uur aan een stuk te leren??'
+  - 'Ik heb een onvoldoende gehaald'
+  - 'Stappendoel behalen voor vandaag: CHECK!'
+22: "Wat is er gaande?"
+23: "Wat voor gevoel hoort hierbij?"
+24: "Opschrijven"
+25: 
+  1: "Vorige dagboekitems laden..."
+  2: "Downloaden van entry-gegevens" #1
+  3: "Data uitpakken" #2
+  4: "Een tabel maken om de gegevens in te zetten" #3
+  5: "Invoergegevens organiseren in tabel" #4
+  6: "Klaar om de inzendingen te tonen!" #5
+26: "Opnieuw proberen"
+27: "AAN"
+28: "UIT"
+29: "Focusmodus is"
+30: "Verander"
+31: "Logger-Diary Cloud Editie, laatst geupdated:"
+32: "met commit ID:"
+33: "Wil je"
+34: "teruggaan"
+35: "Verander je Logger-Diary thema"
+36: "Dagboekeditor-instellingen"
+37: "Focusmodus"
+38: "Lange teksten"
+39: "Zet uit"
+40: "Zet aan"
+41: "Donatieknop"
+42: "Wordt getoond"
+43: "Wordt verborgen"
+44: "Verberg"
+45: "Toon"
+46: "Account"
+47: "Verander je wachtwoord"
+48: "Log uit"
+49: "Log in"
+50:
+  1: 
+    1: "Zonnige Lavendelweide"
+    2: "Standaard licht thema"
+  2: 
+    1: "Standaard thema's"
+    2: "Eenvoudig thema's"
+    3: "Gekleurde thema's"
+    4: "Modded thema's"
+    5: "Strawmelonjuice.com themes - on request adapted to LDo"
+  3:
+    1: "Eenvoudig lichte"
+    2: "Een eenvoudig licht thema."
+  4: 
+    1: "Eenvoudig donker"
+    2: "Een eenvoudig donker thema."
+  5: "thema"
+  6: 
+    1: "Taupe"
+    2: "Origineel standaard thema for Logger-Diary Legacy, vernieuwd voor Logger-Diary Online!"
+  7: 
+    1: "Rouge"
+    2: "Standaard donker thema"
+  8: 
+    1: "Lavender&Rouge automatisch"
+    2: "Kun je niet kiezen tussen het Lavendelweide en Rouge thema? Laat je besturingssysteem kiezen."
+  9: 
+    1: "Eenvoudig automatisch"
+    2: "Kun je niet kiezen tussen de eenvoudige thema's? Laat je besturingssysteem kiezen!"
+  10:
+    1: "Thema voorvertonen"
+    2: "Dit thema kan niet worden voorgetoond."
+  11: 
+    1: "Hello Kitty"
+    2: "Ooh! Zo roze!"
+  12: 
+    1: "Journal Antique"
+    2: "Een ouderwets dagboek."
+  13: 
+    1: "Space emerald v2.0"
+    2: "Een intrigerend thema."
+  14: 
+    1: "Pastellia"
+    2: "Gebaseerd op vroege blog van mar, met frisse pastelkleuren."
+  15: 
+    1: "Strawmelonjuice.com - licht"
+    2: "The strawmelonjuice.com main website theme."
+  16:
+    1: "Skyframe"
+    2: "Een twist op 'Zonnige Lavendelweide'"
+  17: 
+    1: "Pynk Pulse"
+    2: "Een gloednieuw thema, voor liefhebbers van zacht roze!"
+  18: 
+    1: "Zwoele Zomernacht"
+    2: "Een thema dat misschien je ogen wat rust biedt."
+  19:
+    1: "Strawmelonjuice.com - donker"
+    2: "The strawmelonjuice.com main website theme."
+  20:
+    1: "Strawmelonjuice.com - autom donker/licht"
+    2: "The strawmelonjuice.com main website theme."
+  21:
+    1: "Pastellia / Zwoele Zomernacht"
+    2: "Wisselt automatisch met donker/licht van systeem."
+51: "of"
+52: "Nog niet beschikbaar"
+54:
+  1: "Aww, mijn reeks is gereset…"
+  2: "Terug bij het begin reeks 1, maar deze gaan we goed maken!"
+  3: "WOO! Een weekreeks!!"
+  4: "Een maand (30 dagen) durende reeks op zak!"
+  5: "REEKS VAN 100 DAGEN!"
+  6: "Een eenjarige reeks!"
+  7: "Ik ben lid geworden van Logger-Diary Online!"
+55: "Gebruikersnaam"
+56: "Wachtwoord"
+57: "Maak account"
+58: "Heb je geen account?"
+59: "Blijf ingelogd"
+60: "Laat cookies het werk voor je doen"
+61: "Voer alsjeblieft je inloggegevens in om door te gaan"
+62: "Heb je al een account?"
+63: "Bevestig wachtwoord"
+64: "Over"
+65: "Vul alsjeblieft dit formulier in om een account aan te maken."
+66: "meer"
+67: "minder"
+68: "Klik ergens buiten deze sectie om de focus te verbreken."
+69:
+  1: "Steun Logger-Diary Online op Buy me a coffee!"
+  2: "Vind je Logger-Diary fijn? Steun het!"
+70: "Taalinstellingen"
+71:
+  'en': "Engels (standaard)"
+  "nl-nl": "Nederlands (Nederland) (huidig)"
+  "auto": "Automatisch (laat de browser beslissen)"
+72: "Opslaan"
+73: "Is een Framework MOD"
+74: "In ontwikkeling"
+75: "Is BuyMeACoffee niet jouw ding? Je kunt ook een donatie doen via een van deze"
+76: "andere sites"
+"tour":
+  -
+    1: "Ben je hier nieuw?"
+    2: "Volgende"
+    3: "Sla rondleiding over"
+    4: "Terug"
+    5: "Rondleiding"
+    6: "Maak de rondleiding af"
+    7: "Je bent klaar met de rondleiding!"
+  - 
+    1: "Hallo en welkom bij LDo! Mogen we je, voordat je begint, een korte rondleiding geven?"
+  -
+    1: "Oké. Zie je dit?"
+    2: "Dit lijkt erg op wat je op de homepage zal zien."
+    3: "Nieuwe dagboeknotities maken"
+  -
+    1: "Je reis begint daar waar de grote rode pijl naartoe wijst."
+    2: "Dit is waar je in zal schrijven. Maar "
+    3: "dat"
+    4: " begreep je natuurlijk al... dus, wat nu?"
+  -
+    1: "Dit kleine knopje met de '⏺️' noem ik de feel selector knop."
+    2: "Klik erop om een emoji te selecteren die laat zien hoe je je voelt bij wat je hebt geschreven. Je kunt het ook op '⏺️' laten staan als je niet weet welk gevoel je moet invullen."
+  -
+    1: "Als je denkt dat je er klaar voor bent, druk dan op de verzendknop en schrijf je notities op!"
+    2: "Nu verschijnt het hier, kijk!"
+  -
+    1: "Aanpassingen"
+    2: "Op het instellingenscherm,"
+    3: "kun je verschillende dingen instellen, zoals thema's (zoals je misschien hebt gezien in de bovenstaande schermafbeeldingen), de lengte van je invoertekstvak, FOCUSMODE en nog veel meer!"
+  -
+    1: "Ga naar homepage"
+    2: "Ga naar instellingen"
+    3: "Stel een thema in!"
+77: "Voor"
+78: "Licentie"
+79: "Dagelijkse reeks"
+80: "Verberg dagelijkse reeks"
+81: "Focusmodus werkt niet op mobiel."
+82:
+  1: "seconden geleden"
+  2: "minuten geleden"
+  3: "uur geleden"
+  4: "dagen geleden"
+  5: "Gisteren"
+83: "Lange teksten werkt mogelijk niet goed op mobiel."

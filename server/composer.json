@@ -1,0 +1,16 @@
+{
+    "name": "logger-diary/cloud",
+    "description": "Server side of Logger-Diary Cloud!",
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "hybridauth/hybridauth": "^3.8",
+        "symfony/yaml": "^6.2"
+    },
+    "license": "GNU-3-or-later",
+    "authors": [
+        {
+            "name": "Mar",
+            "email": "mar@strawmelonjuice.com"
+        }
+    ]
+}

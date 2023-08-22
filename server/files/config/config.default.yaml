@@ -1,0 +1,5 @@
+# Default env file contents, please change before flight!
+DB_HOST: localhost
+DB_USERNAME: ldcloud
+DB_PASSWORD: 9yYgsgy
+DB_NAME: ldcloud

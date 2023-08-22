@@ -1,0 +1,27 @@
+{
+  "name": "logger-diary.client",
+  "version": "0.0.1-pre-all",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strawmelonjuice/logger-diary.client.git"
+  },
+  "author": "Mar @strawmelonjuice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strawmelonjuice/logger-diary.client/issues"
+  },
+  "homepage": "https://logger-diary.strawmelonjuice.online/getclient",
+  "devDependencies": {
+    "electron": "^16"
+  },
+  "dependencies": {
+    "hl-img": "^1.10.10",
+    "jquery": "^3.7.0"
+  }
+}
