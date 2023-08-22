@@ -20,7 +20,7 @@ function createWindow() {
       preload: path.join(__dirname, "/preload.js"),
     },
   });
-  windj.loadFile("index.html");
+  windj.loadFile("assets/index.html");
   if (env.devmode === true) {
   windj.webContents.openDevTools();
   }

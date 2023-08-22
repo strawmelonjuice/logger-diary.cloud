@@ -12,14 +12,14 @@
   </style>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script type="module">
-    import env from './env.json' assert { type: 'json' };
+    import env from '../env.json' assert { type: 'json' };
     if (env.devmode === true) {
       console.warn("Developer mode is enabled! Be careful.")
       const serveradress = env.customServerAdress;
     } else {
       const serveradress = 'https://electronapi.logger-diary.online/';
     }
-    import clientinfo from './package.json' assert { type: 'json' };
+    import clientinfo from '../package.json' assert { type: 'json' };
     console.info("Client version: " + clientinfo.version);
   </script>
 </head>
@@ -98,9 +98,9 @@
     </div>
   </header>
   <main id="content"></main>
-  <script src="./renderer.js"></script>
+  <script src="../renderer.js"></script>
   <script type="module">
-    import pageLoader from "./modules/pageload.js";
+    import pageLoader from "../modules/pageload.js";
     document.body.addEventListener("click", (event) => {
       setTimeout(() => {
         pageLoader();
