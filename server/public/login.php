@@ -16,32 +16,28 @@ $username_err = $password_err = $login_err = "";
 
 
 if (_bot_detected()) {
-    $username = "crawler";
-    $password = "R3GX@@9dek3B2KSLs%q";
-    setcookie("autologin_user", $username, time() + (86400 * 60), "/");
-    setcookie("autologin_pass", $password, time() + (86400 * 60), "/");
-    error_log("Crawler was given credentials.");
-    header("location: /autologin.php");
+    header("HTTP/1.0 401 Unauthorized");
 }
 
 if ((isset($_COOKIE['autologin_user'])) and ((!($_SESSION["SKIPAUTOLOGIN"] == 1)))) {
-    header("location: /autologin.php");
+    die("A cookie exists! What now?");
 }
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "GET"){
  
     // Check if username is empty
-    if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+    if(empty(trim($_GET["username"]))){
+        header("HTTP/1.0 401 Unauthorized");
+        die("No username.");
     } else{
-        $username = trim($_POST["username"]);
+        $username = trim($_GET["username"]);
     }
     
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($_GET["password"]))){
         $password_err = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_GET["password"]);
     }
     
     // Validate credentials
@@ -75,15 +71,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["UID"] = $id;
                             $_SESSION["username"] = $username;           
-                            $_SESSION["NewLogin"] = true;                 
+                            $_SESSION["NewLogin"] = true;     
                             
                             // If user wants to stay logged in, set cookies (maybe these'll be more encrypted in future but as long as we don't get any cross-site stuff should be good.)
-                            if ($_POST["autologin"]) {
+                            if (true) {
                                 setcookie("autologin_user", $username, time() + (86400 * 60), "/");
                                 setcookie("autologin_pass", $password, time() + (86400 * 60), "/");
                             }
-                            // Redirect user to welcome page
-                            header("location: /home/");
+                            // Redirect user to the request handler.
+                            include("../handleAPIrequest.php");
+                            die;
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -94,7 +91,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $login_err = "Invalid username or password.";
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                header("HTTP/1.0 401 Unauthorized");
+                die;
             }
 
             // Close statement
@@ -105,6 +103,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
-    require_once(__DIR__ . "/../files/scripts/LanguageActions.php");
-    require(__DIR__ . "/../files/pages/login.php");
-    die;
+header("HTTP/1.0 401 Unauthorized");
+die;

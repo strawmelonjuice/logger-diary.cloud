@@ -1,3 +1,2 @@
-export default () => {
-    console.log('page being loaded.');
-}
+const helga = "Login page";
+export default helga

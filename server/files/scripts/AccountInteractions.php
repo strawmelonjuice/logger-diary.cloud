@@ -93,21 +93,6 @@ function DiaryDot() {
     }
         return $DiaryDot;
 }
-function ThemeColor() {
-$themeinfo = Yaml::parseFile(__DIR__ . '/../config/themes.yaml'); {
-    if ((AccountInteraction($_SESSION['UID'], "Get", "settings", "set_theme")) == 'framework') {
-        $chotheme = AccountInteraction($_SESSION['UID'], "Get", "settings", "frameworkmod_theme", "");
-    } else {
-        $chotheme = (AccountInteraction($_SESSION['UID'], "Get", "settings", "set_theme"));
-    }
-}
-foreach ($themeinfo as $style) {
-    if ($style['internal'] == $chotheme) {
-        // Match found!
-        return $style['color'];
-    }
-}
-}
 if (isset($LanguageActionsAvailable) and ($LanguageActionsAvailable )) {
 if ((AccountInteraction($_SESSION['UID'],"Get","settings", "PreferedLanguageOverride") != NULL)) {
     unset($_SESSION['UserLangOverride']['lang']);

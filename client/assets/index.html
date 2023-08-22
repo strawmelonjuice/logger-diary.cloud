@@ -103,6 +103,10 @@
         pageLoader();
       }, 100);
     });
+    window.onoffline = function () {
+        window.location.hash = '/offline/';
+        pageLoader();
+    }
     pageLoader();
   </script>
 </body>

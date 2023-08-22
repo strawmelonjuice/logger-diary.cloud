@@ -18,7 +18,7 @@
   },
   "homepage": "https://logger-diary.strawmelonjuice.online/getclient",
   "devDependencies": {
-    "electron": "^16"
+    "electron": "^26.0.0"
   },
   "dependencies": {
     "hl-img": "^1.10.10",

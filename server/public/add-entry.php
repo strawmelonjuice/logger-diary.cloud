@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../files/scripts/config.php";
-require_once __DIR__ . "/../files/scripts/EntryActions.php";
+require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/files/scripts/config.php";
+require_once __DIR__ . "/files/scripts/EntryActions.php";
 header('Content-type: application/json');
 if ($_POST['StreakCelebration'] = "1") {
     $current = AccountInteraction($_SESSION['UID'],"Get","others", "lastknownclientdate");
@@ -20,4 +20,4 @@ $EntryData->Date = time();
 $EntryData->Text = $Parsedown->text($new_entry);
 $EntryData->Feel = htmlspecialchars($_POST['new_entry_feel']);
 EntryRW($_SESSION["UID"],"Add", $EntryData);
-header("Location: /home/");
+header("Location: " . $_POST['return']);
