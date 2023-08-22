@@ -14,6 +14,7 @@ function createWindow() {
     // Decomment once closing buttons work
     backgroundColor: "#FFF",
     webPreferences: {
+      devTools: env.devmode,
       nodeIntegration: true,
       contextIsolation: true,
       preload: path.join(__dirname, "/preload.js"),
