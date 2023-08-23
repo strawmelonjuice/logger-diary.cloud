@@ -1,5 +1,5 @@
 <?php
-    require_once(__DIR__ . "/../../vendor/autoload.php");
+    require_once(__DIR__ . "/../vendor/autoload.php");
     use Symfony\Component\Yaml\Yaml;
     $_ENV = Yaml::parseFile(__DIR__ . '/../config/config.yaml');
     define('DB_SERVER', $_ENV['DB_HOST']);
