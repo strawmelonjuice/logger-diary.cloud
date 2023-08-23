@@ -1,8 +1,7 @@
 vendor
-files/.env
 .obsidian/workspace.json
 access.log
 error.log
 ads.txt
-files/config/config.yaml
+config/config.yaml
 PROD

@@ -13,14 +13,14 @@ if (str_starts_with($_SERVER['REQUEST_URI'],"/ping")) {
 
 if (!file_exists(__DIR__ . "/../PROD")) $prod = 0; else $prod = 1;
 require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../files/scripts/config.php";
+require_once __DIR__ . "/../php/config.php";
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../files/scripts/config.php";
+require_once __DIR__ . "/../php/config.php";
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     if ($_POST['username'] != $_SESSION['username']) {
         session_destroy();
