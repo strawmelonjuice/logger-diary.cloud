@@ -1,6 +1,6 @@
 {
-  "name": "logger-diary.client",
-  "version": "0.1.4-pre-all",
+  "name": "logger-diary.cloud-client",
+  "version": "0.1.5-pre-all",
   "description": "",
   "main": "main.js",
   "scripts": {

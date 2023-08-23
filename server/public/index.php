@@ -5,7 +5,7 @@ if (file_exists(__DIR__ . "/../MAINTENANCE")) {
     die("Maintenance");
 }
 
-if (!str_contains($_SERVER['HTTP_USER_AGENT'], "logger-diary.client")) die("This is not a place for you, human.");
+if (!str_contains($_SERVER['HTTP_USER_AGENT'], "logger-diary.cloud-client")) die("This is not a place for you, human.");
 
 if (str_starts_with($_SERVER['REQUEST_URI'],"/ping")) {
     die("pong");
