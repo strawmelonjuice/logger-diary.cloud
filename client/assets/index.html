@@ -6,17 +6,44 @@
   <title>Logger-Diary Cloud: Client</title>
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   <link rel="stylesheet" href="style.css" content-type="text/css" charset="utf-8" />
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./early.js"></script>
+  <script>
+  let env;
+  let clientinfo;
+  let apiadress;
+  </script>
   <script type="module">
-    import env from '../env.json' assert { type: 'json' };
-    if (env.devmode === true) {
-      console.warn("Developer mode is enabled! Be careful.")
-      const serveradress = env.customServerAdress;
-    } else {
-      const serveradress = 'https://electronapi.logger-diary.online/';
-    }
-    import clientinfo from '../package.json' assert { type: 'json' };
+    import envi from '../env.json' assert { type: 'json' };
+    env = envi;
+    import clientinfoio from '../package.json' assert { type: 'json' };
+    clientinfo = clientinfoio;
     console.info("Client version: " + clientinfo.version);
+    if (envi.devmode === true) {
+        console.warn("Developer mode is enabled! Be careful.")
+        apiadress = env.customServerAdress;
+      } else {
+        apiadress = "https://electronapi.logger-diary.online/";
+      }
+  </script>
+  <script>
+    function apicall(ask, callback) {
+      if (localStorage.getItem('loginUsername') != '') {
+        const body = {
+          username: localStorage.getItem('loginUsername'),
+          password: localStorage.getItem('loginPassword'),
+          ask: ask
+        };
+        $.post(apiadress, body, (data, status) => {
+          callback(data);
+        });
+      } else {
+        console.error("No credentials!");
+      }}
+      if (localStorage.getItem('loginUsername') == null) {
+        console.log("Oh dear. Not logged in!");
+        window.location.hash = '/login/';
+      }
   </script>
 </head>
 
@@ -96,6 +123,38 @@
   <div id="sidenav"></div>
   <main id="content"></main>
   <script src="../renderer.js"></script>
+  <script>
+    document.body.addEventListener("click", (event) => {
+        if ((window.location.hash) === "#/gologin/") {
+          function TestCredentialsAndMaybeSave(username, password) {
+            console.log("Testing credentials")
+            const body = {
+              username: username,
+              password: password,
+              ask: 'access'
+            };
+            $.post(apiadress, body, (data, status) => {
+              if ((JSON.parse(data).test) === "passed") {
+                localStorage.setItem('loginUsername', username);
+                localStorage.setItem('loginPassword', password);
+                console.log("Credentials OK. Response: " + JSON.parse(data).test);
+                window.location.hash = '/home/';
+              } else {
+                console.log("Credentials NOT OK. Response: " + JSON.parse(data).test);
+                window.location.hash = '/login-fail/';
+
+              }
+            });
+          }
+          username = urlParams().username;
+          password = urlParams().password;
+          if (username != '' && password != '') {
+            TestCredentialsAndMaybeSave(username, password);
+          }
+          window.location.hash = '/login/';
+        }
+      });
+  </script>
   <script type="module">
     import pageLoader from "../modules/pageload.js";
     document.body.addEventListener("click", (event) => {

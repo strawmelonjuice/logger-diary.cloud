@@ -16,6 +16,12 @@ export default () => {
     if (window.location.hash != pagecontent.dataset.currentView) {
         console.log("Actualising...");
         switch (window.location.hash) {
+            case '#/login/':
+                LoadPageModule("login.js")
+                pagecontent.dataset.currentView = '#/login/';
+                break;
+            case '#/gologin/':
+                break;
             case '#/offline/':
                 LoadPageModule("offline.mjs")
                 pagecontent.dataset.currentView = '#/offline/';
