@@ -1,17 +1,16 @@
-const { app: app, BrowserWindow: BrowserWindow, ipcMain: ipcMain } = require("electron");
+const {
+  app: app,
+  BrowserWindow: BrowserWindow,
+  ipcMain: ipcMain,
+} = require("electron");
 const path = require("path");
-const env = require('./env.json');
+const env = require("./env.json");
 let windj;
-
-
-
 function createWindow() {
-  // Create the browser window.
   windj = new BrowserWindow({
     width: 800,
     height: 600,
     frame: false,
-    // Decomment once closing buttons work
     backgroundColor: "#FFF",
     webPreferences: {
       devTools: env.devmode,
@@ -22,7 +21,7 @@ function createWindow() {
   });
   windj.loadFile("assets/index.html");
   if (env.devmode === true) {
-  windj.webContents.openDevTools();
+    windj.webContents.openDevTools();
   }
   windj.on("closed", () => {
     windj = null;
@@ -36,25 +35,23 @@ app.on("window-all-closed", function () {
 });
 app.on("activate", function () {
   if (windj === null) {
-    ipcMain.handle('ping', () => 'pong');
-    ipcMain.handle('windowaction-close', () => windj.close());
-    ipcMain.on('window:minify', () => {
+    ipcMain.handle("ping", () => "pong");
+    ipcMain.handle("windowaction-close", () => windj.close());
+    ipcMain.on("window:minify", () => {
       windj.minimize();
     });
     createWindow();
   }
 });
-ipcMain.on('window:maxify', () => {
+ipcMain.on("window:maxify", () => {
   windj.maximize();
 });
-
-ipcMain.on('window:unmaxify', () => {
+ipcMain.on("window:unmaxify", () => {
   windj.restore();
 });
-
-ipcMain.on('window:close', () => {
+ipcMain.on("window:close", () => {
   windj.close();
 });
-ipcMain.on('window:minify', () => {
+ipcMain.on("window:minify", () => {
   windj.minimize();
-})
+});
