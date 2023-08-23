@@ -1,5 +1,4 @@
-const helga = function () {
-    var astrid = `
+const helga = `
      <form id="loginform" action="#/gologin/" method="get">
             <div class="form-group">
                 <label><h4>Username</h4></label>
@@ -18,9 +17,7 @@ const helga = function () {
                 <div class="form-group"><br></br>
                 <input type="submit" class="LoginForm LoginButton" value="Continue!">
             </div>
-            <p>Don't have an account? <a href="https://logger-diary.online/register/" target="_popup">Sign up online</a>.</p>
+            <p>Don't have an account? <a href="https://logger-diary.online/register/" target="_blank">Sign up online</a>.</p>
         </form>
     `
-    return astrid;
-}
 export default helga

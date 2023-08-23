@@ -17,7 +17,7 @@ export default () => {
         console.log("Actualising...");
         switch (window.location.hash) {
             case '#/login/':
-                LoadPageModule("login.js")
+                LoadPageModule("login.js","string")
                 pagecontent.dataset.currentView = '#/login/';
                 break;
             case '#/gologin/':
