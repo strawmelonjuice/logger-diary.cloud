@@ -7,6 +7,10 @@ if (file_exists(__DIR__ . "/../MAINTENANCE")) {
 
 if (!str_contains($_SERVER['HTTP_USER_AGENT'], "logger-diary.client")) die("This is not a place for you, human.");
 
+if (str_starts_with($_SERVER['REQUEST_URI'],"/ping")) {
+    die("pong");
+}
+
 if (!file_exists(__DIR__ . "/../PROD")) $prod = 0; else $prod = 1;
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../files/scripts/config.php";
@@ -29,12 +33,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
-
-
-if (_bot_detected()) {
-    header("HTTP/1.0 401 Unauthorized");
-    die("ur a bot");
-}
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
