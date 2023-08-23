@@ -16,16 +16,16 @@
             "port": 9222,
             "request": "attach",
             "type": "chrome",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}/client"
         },
         {
             "name": "Main",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "cwd": "${workspaceFolder}/client",
+            "runtimeExecutable": "${workspaceFolder}/client/node_modules/.bin/electron",
             "windows": {
-                "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+                "runtimeExecutable": "${workspaceFolder}/client/node_modules/.bin/electron.cmd"
             },
             "args": [
                 ".",
