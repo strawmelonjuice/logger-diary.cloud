@@ -16,6 +16,7 @@ function _bot_detected()
         && preg_match('/bot|crawl|slurp|spider|mediapartners/i', $_SERVER['HTTP_USER_AGENT'])
     );
 }
+
     // Check connection
     if($link === false){
         echo "Database seems offline. Try again later.";

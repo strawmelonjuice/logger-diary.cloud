@@ -1,10 +1,10 @@
 <?php
-if (isset($_GET['api']) and ($_GET['api'] != null)) {
+if (isset($_POST['ask']) and ($_POST['ask'] != null)) {
     header('Cache-Control: max-age=0, must-revalidate');
-    switch ($_GET['api']) {
+    switch ($_POST['ask']) {
         case 'entries':
             header('Content-type: application/json');
-            require_once __DIR__ . "/../files/scripts/EntryActions.php";
+            require_once __DIR__ . "/files/scripts/EntryActions.php";
             echo (EntryRW($_SESSION["UID"], "Get"));
             die;
         case 'settings':
@@ -34,6 +34,10 @@ if (isset($_GET['api']) and ($_GET['api'] != null)) {
 
             echo (json_encode($_SESSION["usersetting"]));
             break;
+        case 'access':
+            echo json_encode(array(
+                'test' => 'passed',
+            ));
     }
 }
 die();
