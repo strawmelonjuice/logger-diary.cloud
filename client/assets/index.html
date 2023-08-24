@@ -9,9 +9,9 @@
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./early.js"></script>
   <script>
-  let env;
-  let clientinfo;
-  let apiadress;
+    let env;
+    let clientinfo;
+    let apiadress;
   </script>
   <script type="module">
     import envi from '../env.json' assert { type: 'json' };
@@ -20,11 +20,11 @@
     clientinfo = clientinfoio;
     console.info("Client version: " + clientinfo.version);
     if (envi.devmode === true) {
-        console.warn("Developer mode is enabled! Be careful.")
-        apiadress = env.customServerAdress;
-      } else {
-        apiadress = "https://electronapi.logger-diary.online/";
-      }
+      console.warn("Developer mode is enabled! Be careful.")
+      apiadress = env.customServerAdress;
+    } else {
+      apiadress = "https://electronapi.logger-diary.online/";
+    }
   </script>
   <script>
     function apicall(ask, callback) {
@@ -39,11 +39,51 @@
         });
       } else {
         console.error("No credentials!");
-      }}
-      if (localStorage.getItem('loginUsername') == null) {
-        console.log("Oh dear. Not logged in!");
-        window.location.hash = '/login/';
       }
+    }
+    if (localStorage.getItem('loginUsername') == null) {
+      console.log("Oh dear. Not logged in!");
+      window.location.hash = '/login/';
+    }
+    function apiping() {
+      return new Promise((resolve, reject) => {
+        // console.log("Ping");
+        $.get(apiadress + "ping/", '', (successResponse) => {
+          // console.log("Pong");
+          resolve(successResponse);
+        }).fail(
+          (failResponse) => {
+            reject(failResponse);
+          }
+        );
+      })
+    }
+    var pingres;
+    setTimeout(async () => {
+        pingres = await apiping();
+      }, 13);
+    setInterval(async () => {
+      pingres = await apiping();
+    }, 3000);
+    function IfUp() {
+      // if ((typeof (document.getElementById("content").dataset.pingres) != 'undefined') && ((document.getElementById("content").dataset.pingres) != '') && ((document.getElementById("content").dataset.pingres) != null)) {
+      //   if ((document.getElementById("content").dataset.lastping) > (Date.now() - 3000)) {
+      //     if ((document.getElementById("content").getAttribute('data-pingres') == 1)) { return true; } else { return false; }
+      //   } else {
+      //     (document.getElementById("content")).removeAttribute("data-pingres");
+      //     (document.getElementById("content")).removeAttribute("data-lastping");
+      //   }
+      // } else {
+        if (pingres == "pong") {
+          return true;
+          // document.getElementById("content").dataset.pingres = 1;
+          // document.getElementById("content").dataset.lastping = Date.now();
+        } else {
+          return false;
+          // document.getElementById("content").dataset.pingres = 0;
+        };
+      // }
+    }
   </script>
 </head>
 
@@ -125,46 +165,72 @@
   <script src="../renderer.js"></script>
   <script>
     document.body.addEventListener("click", (event) => {
-        if ((window.location.hash) === "#/gologin/") {
-          function TestCredentialsAndMaybeSave(username, password) {
-            console.log("Testing credentials")
-            const body = {
-              username: username,
-              password: password,
-              ask: 'access'
-            };
-            $.post(apiadress, body, (data, status) => {
-              if ((JSON.parse(data).test) === "passed") {
-                localStorage.setItem('loginUsername', username);
-                localStorage.setItem('loginPassword', password);
-                console.log("Credentials OK. Response: " + JSON.parse(data).test);
-                window.location.hash = '/home/';
-              } else {
-                console.log("Credentials NOT OK. Response: " + JSON.parse(data).test);
-                window.location.hash = '/login-fail/';
+      if (((window.location.hash) === "#/login/") || ((window.location.hash) === "#/gologin/")) {
+        function TestCredentialsAndMaybeSave(username, password) {
+          console.log("Testing credentials")
+          const body = {
+            username: username,
+            password: password,
+            ask: 'access'
+          };
+          $.post(apiadress, body, (data, status) => {
+            if ((JSON.parse(data).test) === "passed") {
+              localStorage.setItem('loginUsername', username);
+              localStorage.setItem('loginPassword', password);
+              console.log("Credentials OK. Response: " + JSON.parse(data).test);
+              window.location.hash = '/home/';
+            } else {
+              console.log("Credentials NOT OK. Response: " + JSON.parse(data).test);
+              window.location.hash = '/login-fail/';
 
-              }
-            });
-          }
-          username = urlParams().username;
-          password = urlParams().password;
-          if (username != '' && password != '') {
-            TestCredentialsAndMaybeSave(username, password);
-          }
-          window.location.hash = '/login/';
+            }
+          });
         }
-      });
+      };
+      if ((window.location.hash) === "#/login/") {
+        if (typeof window.checkCredentialForm != 'undefined') {
+          clearInterval(window.checkCredentialForm);
+        }
+        window.checkCredentialForm = setInterval(() => {
+          ;
+          if ((window.location.hash) === "#/gologin/") {
+            username = urlParams().username;
+            password = urlParams().password;
+            if (username != '' && password != '') {
+              TestCredentialsAndMaybeSave(username, password);
+            }
+            window.location.hash = '/login/';
+          }
+        }, 200);
+      }
+      if ((window.location.hash) === "#/gologin/") {
+        username = urlParams().username;
+        password = urlParams().password;
+        if (username != '' && password != '') {
+          TestCredentialsAndMaybeSave(username, password);
+        }
+        window.location.hash = '/login/';
+      }
+    });
   </script>
   <script type="module">
     import pageLoader from "../modules/pageload.js";
     document.body.addEventListener("click", (event) => {
       setTimeout(() => {
+        if (!IfUp()) {
+          window.offlinereason = "API down.";
+          console.error("API down.");
+          window.location.hash = '/offline/';
+          pageLoader();
+        }
         pageLoader();
       }, 100);
+      
     });
     window.onoffline = function () {
-        window.location.hash = '/offline/';
-        pageLoader();
+      window.offlinereason = "Window offline.";
+      window.location.hash = '/offline/';
+      pageLoader();
     }
     pageLoader();
   </script>
