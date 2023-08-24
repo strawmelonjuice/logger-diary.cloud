@@ -20,9 +20,9 @@ function createWindow() {
     },
   });
   windj.loadFile("assets/index.html");
-  if (env.devmode === true) {
-    windj.webContents.openDevTools();
-  }
+  // if (env.devmode === true) {
+  //   windj.webContents.openDevTools();
+  // }
   windj.on("closed", () => {
     windj = null;
   });

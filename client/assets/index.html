@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <title>Logger-Diary Cloud: Client</title>
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-  <link rel="stylesheet" href="style.css" content-type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" content-type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/themes/taupe.css" content-type="text/css" charset="utf-8">
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./early.js"></script>
   <script>
@@ -20,6 +21,7 @@
     clientinfo = clientinfoio;
     console.info("Client version: " + clientinfo.version);
     if (envi.devmode === true) {
+      window.alert("Developer mode is enabled! Be careful.\n\nDevtools is now unlocked.")
       console.warn("Developer mode is enabled! Be careful.")
       apiadress = env.customServerAdress;
     } else {
@@ -74,7 +76,7 @@
       //     (document.getElementById("content")).removeAttribute("data-lastping");
       //   }
       // } else {
-        if (pingres == "pong") {
+        if (pingres == 'pong') {
           return true;
           // document.getElementById("content").dataset.pingres = 1;
           // document.getElementById("content").dataset.lastping = Date.now();
@@ -89,7 +91,7 @@
 
 <body>
   <header id="titlebar">
-    <span id="window-menubutton">☰</span>
+    <span id="window-menubutton"><img src="./icons/menu-open.svg" id="menubuttonlogo" class="icon-recolor-main"></span>
     <div id="drag-region">
       <div id="window-title">
         <span>Logger-Diary Client</span>
@@ -106,55 +108,55 @@
 
       <div id="window-controls">
         <div class="button" id="min-button">
-          <img class="icon" srcset="
-                icons/min-w-10.png 1x,
-                icons/min-w-12.png 1.25x,
-                icons/min-w-15.png 1.5x,
-                icons/min-w-15.png 1.75x,
-                icons/min-w-20.png 2x,
-                icons/min-w-20.png 2.25x,
-                icons/min-w-24.png 2.5x,
-                icons/min-w-30.png 3x,
-                icons/min-w-30.png 3.5x
+          <img class="icon icon-recolor-main" srcset="
+                icons/min-k-10.png 1x,
+                icons/min-k-12.png 1.25x,
+                icons/min-k-15.png 1.5x,
+                icons/min-k-15.png 1.75x,
+                icons/min-k-20.png 2x,
+                icons/min-k-20.png 2.25x,
+                icons/min-k-24.png 2.5x,
+                icons/min-k-30.png 3x,
+                icons/min-k-30.png 3.5x
               " draggable="false" />
         </div>
         <div class="button" id="max-button">
-          <img class="icon" srcset="
-                icons/max-w-10.png 1x,
-                icons/max-w-12.png 1.25x,
-                icons/max-w-15.png 1.5x,
-                icons/max-w-15.png 1.75x,
-                icons/max-w-20.png 2x,
-                icons/max-w-20.png 2.25x,
-                icons/max-w-24.png 2.5x,
-                icons/max-w-30.png 3x,
-                icons/max-w-30.png 3.5x
+          <img class="icon icon-recolor-main" srcset="
+                icons/max-k-10.png 1x,
+                icons/max-k-12.png 1.25x,
+                icons/max-k-15.png 1.5x,
+                icons/max-k-15.png 1.75x,
+                icons/max-k-20.png 2x,
+                icons/max-k-20.png 2.25x,
+                icons/max-k-24.png 2.5x,
+                icons/max-k-30.png 3x,
+                icons/max-k-30.png 3.5x
               " draggable="false" />
         </div>
         <div class="button" id="restore-button">
-          <img class="icon" srcset="
-                icons/restore-w-10.png 1x,
-                icons/restore-w-12.png 1.25x,
-                icons/restore-w-15.png 1.5x,
-                icons/restore-w-15.png 1.75x,
-                icons/restore-w-20.png 2x,
-                icons/restore-w-20.png 2.25x,
-                icons/restore-w-24.png 2.5x,
-                icons/restore-w-30.png 3x,
-                icons/restore-w-30.png 3.5x
+          <img class="icon icon-recolor-main" srcset="
+                icons/restore-k-10.png 1x,
+                icons/restore-k-12.png 1.25x,
+                icons/restore-k-15.png 1.5x,
+                icons/restore-k-15.png 1.75x,
+                icons/restore-k-20.png 2x,
+                icons/restore-k-20.png 2.25x,
+                icons/restore-k-24.png 2.5x,
+                icons/restore-k-30.png 3x,
+                icons/restore-k-30.png 3.5x
               " draggable="false" />
         </div>
         <div class="button" id="close-button">
-          <img class="icon" srcset="
-                icons/close-w-10.png 1x,
-                icons/close-w-12.png 1.25x,
-                icons/close-w-15.png 1.5x,
-                icons/close-w-15.png 1.75x,
-                icons/close-w-20.png 2x,
-                icons/close-w-20.png 2.25x,
-                icons/close-w-24.png 2.5x,
-                icons/close-w-30.png 3x,
-                icons/close-w-30.png 3.5x
+          <img class="icon icon-recolor-main" srcset="
+                icons/close-k-10.png 1x,
+                icons/close-k-12.png 1.25x,
+                icons/close-k-15.png 1.5x,
+                icons/close-k-15.png 1.75x,
+                icons/close-k-20.png 2x,
+                icons/close-k-20.png 2.25x,
+                icons/close-k-24.png 2.5x,
+                icons/close-k-30.png 3x,
+                icons/close-k-30.png 3.5x
               " draggable="false" />
         </div>
       </div>
@@ -219,9 +221,9 @@
       setTimeout(() => {
         if (!IfUp()) {
           window.offlinereason = "API down.";
-          console.error("API down.");
           window.location.hash = '/offline/';
           pageLoader();
+          window.location.hash = '/home/';
         }
         pageLoader();
       }, 100);

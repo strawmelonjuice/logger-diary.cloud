@@ -1,6 +1,13 @@
-
 body {
     margin: 0px;
+    background-color: var(--body-backgroundcolor);
+    color: var(--main-textcolor);
+    font-family: var(--main-font-family);;
+}
+
+.icon-recolor-main {
+    /*  */
+    filter: brightness(0) saturate(100%) var(--filter-icon-recolor-main)
 }
 
 #content {
@@ -44,18 +51,17 @@ body {
 }
 
 #titlebar {
-    background-color: currentColor;
-    /* color: #FFF; */
-    border-radius: 0px 0px 35px 15px;
+    background-color: var(--title-bar-color);
+    border-radius: 0px 0px calc(var(--general-border-radius-px) + 10px) calc(var(--general-border-radius-px) - 10px);
     border-top: none;
-    border-right: 7px inset #ff6550;
-    border-bottom: 7px inset #ff6550;
-    border-left: 7px inset #ff6550;
+    border-right: 7px inset var(--theme-color);
+    border-bottom: 7px inset var(--theme-color);
+    border-left: 7px inset var(--theme-color);
 }
 
-#titlebar span {
-    color: currentColor;
-    filter: invert(1);
+#titlebar #window-title {
+    color: var(--theme-color);
+    /* filter: invert(1); */
 }
 
 #titlebar #drag-region {
@@ -65,15 +71,24 @@ body {
 
 #window-menubutton {
     position: absolute;
-    top: 2px;
-    display: block;
+    top: 4px;
+    display: flex;
     align-items: center;
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     margin: 0px;
     overflow: hidden;
-    font-size: 25px;
+    background-color: var(--body-backgroundcolor);
+    border-radius: calc(var(--general-border-radius-px) - 15px);
+    align-content: center;
+    padding: 0px;
+    justify-content: center;
 }
+#window-menubutton #menubuttonlogo {
+    width: inherit;
+    height: inherit;
+}
+
 #sidenav {
     height: 100%;
     position: fixed;
@@ -84,15 +99,18 @@ body {
     transition: width .5s;
     padding-top: 60px;
 }
+
 #window-title {
     /* position: absolute;*/
     top: 8px;
     /* left: 45px;  */
     grid-column: 2;
     display: flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     overflow: hidden;
-    font-family: "Segoe UI", sans-serif;
+    font-family: var(--ui-font-family);
     font-size: 12px;
 }
 
@@ -176,7 +194,8 @@ body {
 
 #close-button {
     grid-column: 3;
-    border-radius: 0 0px 21px;
+    border-radius: 0 0px calc(var(--general-border-radius-px) - 4px);
+    overflow: hidden;
 }
 
 #restore-button {

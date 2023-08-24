@@ -1,0 +1,11 @@
+@import url('https://strawmelonjuice.com/gfonts.php/https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+:root {
+    --main-font-family: 'Ubuntu', sans-serif;
+    --ui-font-family: 'Ubuntu', sans-serif;
+    --body-backgroundcolor: #674C47;
+    --main-textcolor: #ace0a2;
+    --filter-icon-recolor-main: invert(91%) sepia(10%) saturate(1064%) hue-rotate(55deg) brightness(93%) contrast(89%);
+    --theme-color: #f7bd76;
+    --title-bar-color: #8a7976;
+    --general-border-radius-px: 25px;
+}

@@ -53,6 +53,7 @@ export default () => {
             case "#/gologin/":
                 break;
             case "#/offline/":
+                console.error(window.offlinereason);
                 LoadPageModule("offline.mjs");
                 pagecontent.dataset.currentView = "#/offline/";
                 break;
