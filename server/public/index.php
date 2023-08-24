@@ -5,7 +5,10 @@ if (file_exists(__DIR__ . "/../MAINTENANCE")) {
     die("Maintenance");
 }
 
-if (!str_contains($_SERVER['HTTP_USER_AGENT'], "logger-diary.cloud-client")) die("This is not a place for you, human.");
+if (!str_contains($_SERVER['HTTP_USER_AGENT'], "logger-diary.cloud-client")) {
+    header("HTTP/1.0 422 Unprocessable Entity");
+    die("This is not a place for you, human.");
+}
 
 if (str_starts_with($_SERVER['REQUEST_URI'],"/ping")) {
     die("pong");
@@ -116,5 +119,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
-header("HTTP/1.0 401 Unauthorized");
+header("HTTP/1.0 422 Unprocessable Entity");
 die("Unknown action.");
