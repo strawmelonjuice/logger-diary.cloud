@@ -8,8 +8,8 @@ const env = require("./env.json");
 let windj;
 function createWindow() {
   windj = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 400,
+    height: 500,
     frame: false,
     backgroundColor: "#FFF",
     webPreferences: {
