@@ -62,6 +62,7 @@
     }
     var pingres;
     setTimeout(async () => {
+        pingres = "no";
         pingres = await apiping();
       }, 13);
     setInterval(async () => {
@@ -95,15 +96,6 @@
     <div id="drag-region">
       <div id="window-title">
         <span>Logger-Diary Client</span>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg">
-            <style>
-              .small {
-                font: 13px sans-serif;
-                fill: brown;
-              }
-            </style>
-            <text x="20" y="35" class="small">Logger-Diary Client</text>
-          </svg> -->
       </div>
 
       <div id="window-controls">
@@ -222,15 +214,17 @@
         if (!IfUp()) {
           window.offlinereason = "API down.";
           window.location.hash = '/offline/';
-          pageLoader();
-          window.location.hash = '/home/';
+        } else {
+          if (window.offlinereason == "API down.") {
+            window.location.hash = '/home/';
+          }
         }
         pageLoader();
       }, 100);
       
     });
     window.onoffline = function () {
-      window.offlinereason = "Window offline.";
+      window.offlinereason = "Internet unavailable.";
       window.location.hash = '/offline/';
       pageLoader();
     }
